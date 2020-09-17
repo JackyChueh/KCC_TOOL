@@ -10,12 +10,13 @@ namespace KCC_TOOL.Model
 {
     public class SendMessage
     {
-        public static void Email(MailAddress From, MailAddress To, string Subject, string Body, string Server, int Port, string Account, string Password)
+        public static void Email(MailAddress From, MailAddress To, string Subject, string Body, string Server, int Port
+            , string Account, string Password, bool IsBodyHtml, bool EnableSsl, bool UseDefaultCredentials)
         {
 
             MailMessage mail = new MailMessage(From, To)
             {
-                IsBodyHtml = true,
+                IsBodyHtml = IsBodyHtml,
                 Subject = Subject,
                 Body = Body
             };
@@ -23,9 +24,11 @@ namespace KCC_TOOL.Model
             SmtpClient smtp = new SmtpClient();
             smtp.Host = Server;
             smtp.Port = Port;
-            smtp.EnableSsl = true;
+            smtp.EnableSsl = EnableSsl;
             //smtp.UseDefaultCredentials = false;
+            smtp.UseDefaultCredentials = UseDefaultCredentials;   //大車正式環境要加這行才能成功寄信
             smtp.Credentials = new NetworkCredential(Account, Password);
+            
             smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
 
             smtp.Send(mail);

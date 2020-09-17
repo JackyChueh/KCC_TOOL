@@ -33,6 +33,10 @@ namespace KCC_TOOL
 
             txtMAIL_SUBJECT.Text = "測試標題" + DateTime.Now.ToString();
             txtMAIL_BODY.Text = "<h1>測試內文</h1>";
+
+            txtMAIL_IsBodyHtml.Text = ConfigurationManager.AppSettings["MAIL_IsBodyHtml"];
+            txtMAIL_EnableSsl.Text = ConfigurationManager.AppSettings["MAIL_EnableSsl"];
+            txtMAIL_UseDefaultCredentials.Text = ConfigurationManager.AppSettings["MAIL_UseDefaultCredentials"];
             #endregion
         }
 
@@ -50,12 +54,16 @@ namespace KCC_TOOL
                 string account = txtMAIL_ACCOUNT.Text;
                 string password = txtMAIL_PASSWORD.Text;
 
-                SendMessage.Email(from, to, subject, body, server, port, account, password);
+                bool isBodyHtml = bool.Parse(txtMAIL_IsBodyHtml.Text);
+                bool enableSsl = bool.Parse(txtMAIL_EnableSsl.Text);
+                bool useDefaultCredentials = bool.Parse(txtMAIL_UseDefaultCredentials.Text);
+                SendMessage.Email(from, to, subject, body, server, port, account, password, isBodyHtml, enableSsl, useDefaultCredentials);
             }
             catch (Exception ex)
             {
-                txtOUTPUT.AppendText(ex.ToString());
-                //txtOUTPUT.AppendText(ex.StackTrace);
+                string exString = ex.ToString();
+                Log.Write(exString);
+                txtOUTPUT.AppendText(exString);
             }
 
         }
@@ -66,3 +74,4 @@ namespace KCC_TOOL
         }
     }
 }
+

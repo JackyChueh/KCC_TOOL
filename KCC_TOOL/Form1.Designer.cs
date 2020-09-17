@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDatabase = new System.Windows.Forms.TabPage();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,6 +40,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabEmail = new System.Windows.Forms.TabPage();
+            this.txtMAIL_BODY = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtMAIL_SUBJECT = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtMAIL_TO = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtMAIL_FROM = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtMAIL_PORT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMAIL_PASSWORD = new System.Windows.Forms.TextBox();
@@ -48,16 +57,13 @@
             this.txtMAIL_SERVER = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEmail = new System.Windows.Forms.Button();
-            this.txtMAIL_SUBJECT = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtMAIL_TO = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtMAIL_FROM = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.txtMAIL_BODY = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.txtOUTPUT = new System.Windows.Forms.RichTextBox();
+            this.txtMAIL_IsBodyHtml = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtMAIL_EnableSsl = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtMAIL_UseDefaultCredentials = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabDatabase.SuspendLayout();
             this.tabEmail.SuspendLayout();
@@ -70,7 +76,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(984, 380);
+            this.tabControl1.Size = new System.Drawing.Size(760, 280);
             this.tabControl1.TabIndex = 0;
             // 
             // tabDatabase
@@ -87,10 +93,17 @@
             this.tabDatabase.Location = new System.Drawing.Point(4, 22);
             this.tabDatabase.Name = "tabDatabase";
             this.tabDatabase.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDatabase.Size = new System.Drawing.Size(976, 354);
+            this.tabDatabase.Size = new System.Drawing.Size(752, 254);
             this.tabDatabase.TabIndex = 0;
             this.tabDatabase.Text = "資料庫";
             this.tabDatabase.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(90, 62);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(146, 22);
+            this.textBox6.TabIndex = 25;
             // 
             // textBox5
             // 
@@ -151,7 +164,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(687, 6);
+            this.button1.Location = new System.Drawing.Point(19, 90);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -160,6 +173,12 @@
             // 
             // tabEmail
             // 
+            this.tabEmail.Controls.Add(this.txtMAIL_UseDefaultCredentials);
+            this.tabEmail.Controls.Add(this.label15);
+            this.tabEmail.Controls.Add(this.txtMAIL_EnableSsl);
+            this.tabEmail.Controls.Add(this.label14);
+            this.tabEmail.Controls.Add(this.txtMAIL_IsBodyHtml);
+            this.tabEmail.Controls.Add(this.label13);
             this.tabEmail.Controls.Add(this.txtMAIL_BODY);
             this.tabEmail.Controls.Add(this.label12);
             this.tabEmail.Controls.Add(this.txtMAIL_SUBJECT);
@@ -180,14 +199,78 @@
             this.tabEmail.Location = new System.Drawing.Point(4, 22);
             this.tabEmail.Name = "tabEmail";
             this.tabEmail.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmail.Size = new System.Drawing.Size(976, 354);
+            this.tabEmail.Size = new System.Drawing.Size(752, 254);
             this.tabEmail.TabIndex = 1;
             this.tabEmail.Text = "電子郵件";
             this.tabEmail.UseVisualStyleBackColor = true;
             // 
+            // txtMAIL_BODY
+            // 
+            this.txtMAIL_BODY.Location = new System.Drawing.Point(79, 174);
+            this.txtMAIL_BODY.Name = "txtMAIL_BODY";
+            this.txtMAIL_BODY.Size = new System.Drawing.Size(146, 22);
+            this.txtMAIL_BODY.TabIndex = 32;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 177);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(29, 12);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "內文";
+            // 
+            // txtMAIL_SUBJECT
+            // 
+            this.txtMAIL_SUBJECT.Location = new System.Drawing.Point(79, 146);
+            this.txtMAIL_SUBJECT.Name = "txtMAIL_SUBJECT";
+            this.txtMAIL_SUBJECT.Size = new System.Drawing.Size(146, 22);
+            this.txtMAIL_SUBJECT.TabIndex = 30;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 149);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(29, 12);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "標題";
+            // 
+            // txtMAIL_TO
+            // 
+            this.txtMAIL_TO.Location = new System.Drawing.Point(79, 118);
+            this.txtMAIL_TO.Name = "txtMAIL_TO";
+            this.txtMAIL_TO.Size = new System.Drawing.Size(146, 22);
+            this.txtMAIL_TO.TabIndex = 28;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 121);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 12);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "收件者";
+            // 
+            // txtMAIL_FROM
+            // 
+            this.txtMAIL_FROM.Location = new System.Drawing.Point(79, 90);
+            this.txtMAIL_FROM.Name = "txtMAIL_FROM";
+            this.txtMAIL_FROM.Size = new System.Drawing.Size(146, 22);
+            this.txtMAIL_FROM.TabIndex = 26;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 93);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "寄件者";
+            // 
             // txtMAIL_PORT
             // 
-            this.txtMAIL_PORT.Location = new System.Drawing.Point(271, 6);
+            this.txtMAIL_PORT.Location = new System.Drawing.Point(311, 6);
             this.txtMAIL_PORT.Name = "txtMAIL_PORT";
             this.txtMAIL_PORT.Size = new System.Drawing.Size(146, 22);
             this.txtMAIL_PORT.TabIndex = 8;
@@ -195,7 +278,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(231, 9);
+            this.label4.Location = new System.Drawing.Point(238, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 12);
             this.label4.TabIndex = 7;
@@ -251,7 +334,7 @@
             // 
             // btnEmail
             // 
-            this.btnEmail.Location = new System.Drawing.Point(687, 5);
+            this.btnEmail.Location = new System.Drawing.Point(541, 6);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(75, 23);
             this.btnEmail.TabIndex = 0;
@@ -259,91 +342,68 @@
             this.btnEmail.UseVisualStyleBackColor = true;
             this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
-            // txtMAIL_SUBJECT
-            // 
-            this.txtMAIL_SUBJECT.Location = new System.Drawing.Point(79, 146);
-            this.txtMAIL_SUBJECT.Name = "txtMAIL_SUBJECT";
-            this.txtMAIL_SUBJECT.Size = new System.Drawing.Size(146, 22);
-            this.txtMAIL_SUBJECT.TabIndex = 30;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 149);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 12);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "標題";
-            // 
-            // txtMAIL_TO
-            // 
-            this.txtMAIL_TO.Location = new System.Drawing.Point(79, 118);
-            this.txtMAIL_TO.Name = "txtMAIL_TO";
-            this.txtMAIL_TO.Size = new System.Drawing.Size(146, 22);
-            this.txtMAIL_TO.TabIndex = 28;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 121);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 12);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "收件者";
-            // 
-            // txtMAIL_FROM
-            // 
-            this.txtMAIL_FROM.Location = new System.Drawing.Point(79, 90);
-            this.txtMAIL_FROM.Name = "txtMAIL_FROM";
-            this.txtMAIL_FROM.Size = new System.Drawing.Size(146, 22);
-            this.txtMAIL_FROM.TabIndex = 26;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 93);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 12);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "寄件者";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(90, 62);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(146, 22);
-            this.textBox6.TabIndex = 25;
-            // 
-            // txtMAIL_BODY
-            // 
-            this.txtMAIL_BODY.Location = new System.Drawing.Point(79, 174);
-            this.txtMAIL_BODY.Name = "txtMAIL_BODY";
-            this.txtMAIL_BODY.Size = new System.Drawing.Size(146, 22);
-            this.txtMAIL_BODY.TabIndex = 32;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 177);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(29, 12);
-            this.label12.TabIndex = 31;
-            this.label12.Text = "內文";
-            // 
             // txtOUTPUT
             // 
-            this.txtOUTPUT.Location = new System.Drawing.Point(16, 394);
+            this.txtOUTPUT.Location = new System.Drawing.Point(12, 298);
             this.txtOUTPUT.Name = "txtOUTPUT";
-            this.txtOUTPUT.Size = new System.Drawing.Size(976, 323);
+            this.txtOUTPUT.Size = new System.Drawing.Size(756, 231);
             this.txtOUTPUT.TabIndex = 1;
             this.txtOUTPUT.Text = "";
             this.txtOUTPUT.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // txtMAIL_IsBodyHtml
+            // 
+            this.txtMAIL_IsBodyHtml.Location = new System.Drawing.Point(79, 202);
+            this.txtMAIL_IsBodyHtml.Name = "txtMAIL_IsBodyHtml";
+            this.txtMAIL_IsBodyHtml.Size = new System.Drawing.Size(146, 22);
+            this.txtMAIL_IsBodyHtml.TabIndex = 34;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 205);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(37, 12);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "HTML";
+            // 
+            // txtMAIL_EnableSsl
+            // 
+            this.txtMAIL_EnableSsl.Location = new System.Drawing.Point(311, 34);
+            this.txtMAIL_EnableSsl.Name = "txtMAIL_EnableSsl";
+            this.txtMAIL_EnableSsl.Size = new System.Drawing.Size(146, 22);
+            this.txtMAIL_EnableSsl.TabIndex = 36;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(238, 37);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(50, 12);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "EnableSsl";
+            // 
+            // txtMAIL_UseDefaultCredentials
+            // 
+            this.txtMAIL_UseDefaultCredentials.Location = new System.Drawing.Point(311, 65);
+            this.txtMAIL_UseDefaultCredentials.Name = "txtMAIL_UseDefaultCredentials";
+            this.txtMAIL_UseDefaultCredentials.Size = new System.Drawing.Size(146, 22);
+            this.txtMAIL_UseDefaultCredentials.TabIndex = 38;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(238, 68);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(91, 12);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "DefaultCredentials";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.ClientSize = new System.Drawing.Size(784, 541);
             this.Controls.Add(this.txtOUTPUT);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
@@ -390,6 +450,12 @@
         private System.Windows.Forms.TextBox txtMAIL_BODY;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RichTextBox txtOUTPUT;
+        private System.Windows.Forms.TextBox txtMAIL_UseDefaultCredentials;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtMAIL_EnableSsl;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtMAIL_IsBodyHtml;
+        private System.Windows.Forms.Label label13;
     }
 }
 
